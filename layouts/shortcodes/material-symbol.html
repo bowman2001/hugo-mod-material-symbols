@@ -1,0 +1,19 @@
+{{- $mod := "hugo-mod-material-symbols" }}
+{{- $sc := "material-symbol" }}
+{{- $assets := "svg/material-symbols" }}
+{{- $ctx := .Page }}
+{{- $version := site.Data.materialSymbols.params.version }}
+{{- $set := "wght300grad0fill0opsz24" }}
+{{- $svg := "" }}
+{{- with (.Get 0) }}
+    {{- $id := . }}
+    {{- $filename := path.Join $assets $version $set (print $id ".svg") }}
+    {{- with resources.Get $filename }}
+        {{ $svg = .Content }}
+    {{- else }}
+        {{ errorf "%s: The shortcode %q can’t find '%s' in assets while processing %v." $mod $sc $id $ctx }}
+    {{- end }}
+{{- else }}
+    {{ errorf "%s: The shortcode %q is missing the argument while processing %v." $mod $sc $ctx }}
+{{- end }}
+<span class="{{ site.Data.materialSymbols.params.class | safeHTMLAttr }}">{{- $svg | safeHTML }}</span>

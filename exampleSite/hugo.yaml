@@ -1,0 +1,14 @@
+baseURL: 'http://example.org/'
+title: Hugo-mod-material-symbols Examples
+
+disableKinds:
+  - taxonomy
+  - term
+
+markup:
+  highlight:
+    style: monokailight
+
+module:
+  imports:
+    - path: github.com/bowman2001/hugo-mod-material-symbols
