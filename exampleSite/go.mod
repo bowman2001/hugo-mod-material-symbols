@@ -1,4 +1,4 @@
-module github.com/bowman2001/hugo-mod-material-icons/exampleSite
+module github.com/bowman2001/hugo-mod-material-symbols/exampleSite
 
 go 1.20
 
