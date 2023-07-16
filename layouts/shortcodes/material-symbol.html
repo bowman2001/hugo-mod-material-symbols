@@ -3,7 +3,13 @@
 {{- $assets := "svg/material-symbols" }}
 {{- $ctx := .Page }}
 {{- $version := site.Data.materialSymbols.params.version }}
-{{- $set := "wght300grad0fill0opsz24" }}
+{{- $set := site.Data.materialSymbols.params.size.normal }}
+{{ with (.Get 1) }}
+    {{ $size := . }}
+    {{ range $k, $v := site.Data.materialSymbols.params.size }}
+        {{- if eq $k $size }}{{ $set = $v }}{{ end -}}
+    {{ end }}
+{{ end }}
 {{- $svg := "" }}
 {{- with (.Get 0) }}
     {{- $id := . }}
@@ -11,7 +17,7 @@
     {{- with resources.Get $filename }}
         {{ $svg = .Content }}
     {{- else }}
-        {{ errorf "%s: The shortcode %q can’t find '%s' in assets while processing %v." $mod $sc $id $ctx }}
+        {{ errorf "%s: The shortcode %q can’t find '%s' in assets while processing %v." $mod $sc $filename $ctx }}
     {{- end }}
 {{- else }}
     {{ errorf "%s: The shortcode %q is missing the argument while processing %v." $mod $sc $ctx }}

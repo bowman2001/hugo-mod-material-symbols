@@ -2,7 +2,13 @@
 {{- $assets := "svg/material-symbols" }}
 {{- $ctx := .ctx }}
 {{- $version := site.Data.materialSymbols.params.version }}
-{{- $set := "wght300grad0fill0opsz24" }}
+{{- $set := site.Data.materialSymbols.params.size.normal }}
+{{ with .size }}
+    {{ $size := . }}
+    {{ range $k, $v := site.Data.materialSymbols.params.size }}
+        {{- if eq $k $size }}{{ $set = $v }}{{ end -}}
+    {{ end }}
+{{ end }}
 {{- $svg := "" }}
 {{- with .id }}
     {{ $id := . }}

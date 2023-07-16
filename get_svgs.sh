@@ -3,7 +3,7 @@ SVGDIR="/home/georg/www/material-design-icons/symbols/web"
 VERSION="outlined"
 WEIGHT=300
 GRAD="0"  # "N25", "0", "200"
-SIZE=24 # 20, 24, 40, 48
+SIZE=40 # 20, 24, 40, 48
 FILL=0  # 0, 1
 
 TARGET="/home/georg/www/hugo-mod-material-symbols/assets/svg/material-symbols/${VERSION}/wght${WEIGHT}grad${GRAD}fill${FILL}opsz${SIZE}"
