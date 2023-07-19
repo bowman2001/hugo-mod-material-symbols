@@ -3,22 +3,28 @@
 {{- $ctx := .ctx }}
 {{- $version := site.Data.materialSymbols.params.version }}
 {{- $set := site.Data.materialSymbols.params.size.normal }}
+{{- $class := "" }}
 {{ with .size }}
     {{ $size := . }}
+    {{ $class = print "icon--" $size }}
     {{ range $k, $v := site.Data.materialSymbols.params.size }}
         {{- if eq $k $size }}{{ $set = $v }}{{ end -}}
     {{ end }}
 {{ end }}
 {{- $svg := "" }}
 {{- with .id }}
-    {{ $id := . }}
-    {{- $filename := path.Join $assets $version $set (print $id ".svg") }}
-    {{- with resources.Get $filename }}
-        {{ $svg = .Content }}
+    {{ if (eq . "empty") }}
+        {{- $svg = " " }}
     {{- else }}
-        {{ errorf "%s: The partial 'material-symbol.html' can’t find '%s' in assets while processing %v." $mod $id $ctx }}
+        {{ $id := . }}
+        {{- $filename := path.Join $assets $version $set (print $id ".svg") }}
+        {{- with resources.Get $filename }}
+            {{ $svg = .Content }}
+        {{- else }}
+            {{ errorf "%s: The partial 'material-symbol.html' can’t find '%s' in assets while processing %v." $mod $id $ctx }}
+        {{- end }}
     {{- end }}
 {{- else }}
     {{ errorf "%s: The partial 'material-symbol.html' is missing the parameter 'id' while processing %v." $mod .ctx }}
 {{- end }}
-<span class="{{ site.Data.materialSymbols.params.class | safeHTMLAttr }}">{{- $svg | safeHTML }}</span>
+<span class="{{ (print site.Data.materialSymbols.params.class " " $class) | safeHTMLAttr }}">{{- $svg | safeHTML }}</span>

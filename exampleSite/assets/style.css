@@ -23,8 +23,20 @@ code {
 
 .icon--material {
     position: relative;
-    top: 16.667%;
     fill: currentColor;
+    width: 30px;
+    height: 30px;
+    vertical-align: bottom;
+}
+
+.icon--small {
+    width: 24px;
+    height: 24px;
+}
+
+.icon--big {
+    width: 48px;
+    height: 48px;
 }
 
 .icon--material:hover svg {

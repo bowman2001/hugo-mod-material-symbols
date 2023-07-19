@@ -36,7 +36,7 @@ The shortcode expects the icon filename without the suffix:
 
 ### Small icons
 
-{{< material-symbol preview small >}} {{< material-symbol engineering small >}} {{< material-symbol volcano small >}} {{< material-symbol wall_art small >}} {{< material-symbol wallpaper_slideshow small >}}
+{{< material-symbol preview small >}} {{< material-symbol engineering small >}} {{< material-symbol volcano small >}} {{< material-symbol empty small >}} {{< material-symbol wall_art small >}} {{< material-symbol wallpaper_slideshow small >}}
 
 ## HTML output
 

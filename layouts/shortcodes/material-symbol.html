@@ -4,22 +4,28 @@
 {{- $ctx := .Page }}
 {{- $version := site.Data.materialSymbols.params.version }}
 {{- $set := site.Data.materialSymbols.params.size.normal }}
+{{- $class := "" }}
 {{ with (.Get 1) }}
     {{ $size := . }}
+    {{ $class = print "icon--" $size }}
     {{ range $k, $v := site.Data.materialSymbols.params.size }}
         {{- if eq $k $size }}{{ $set = $v }}{{ end -}}
     {{ end }}
 {{ end }}
 {{- $svg := "" }}
 {{- with (.Get 0) }}
-    {{- $id := . }}
-    {{- $filename := path.Join $assets $version $set (print $id ".svg") }}
-    {{- with resources.Get $filename }}
-        {{ $svg = .Content }}
+    {{ if (eq . "empty") }}
+        {{- $svg = " " }}
     {{- else }}
-        {{ errorf "%s: The shortcode %q can’t find '%s' in assets while processing %v." $mod $sc $filename $ctx }}
+        {{- $id := . }}
+        {{- $filename := path.Join $assets $version $set (print $id ".svg") }}
+        {{- with resources.Get $filename }}
+            {{ $svg = .Content }}
+        {{- else }}
+            {{ errorf "%s: The shortcode %q can’t find '%s' in assets while processing %v." $mod $sc $filename $ctx }}
+        {{- end }}
     {{- end }}
 {{- else }}
     {{ errorf "%s: The shortcode %q is missing the argument while processing %v." $mod $sc $ctx }}
 {{- end }}
-<span class="{{ site.Data.materialSymbols.params.class | safeHTMLAttr }}">{{- $svg | safeHTML }}</span>
+<span class="{{ (print site.Data.materialSymbols.params.class " " $class) | safeHTMLAttr }}">{{- $svg | safeHTML }}</span>
