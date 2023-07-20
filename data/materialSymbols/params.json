@@ -1,7 +1,7 @@
 {
   "version": "outlined",
   "size": {
-    "normal": "wght400grad0fill0opsz24",
+    "normal": "wght300grad0fill0opsz24",
     "small": "wght400grad0fill0opsz20",
     "tiny": "wght400grad0fill1opsz20",
     "big": "wght300grad0fill0opsz40"
