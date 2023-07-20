@@ -1,7 +1,7 @@
 #!/usr/bin/env bash
 SVGDIR="/home/georg/www/material-design-icons/symbols/web"
 VERSION="outlined"
-WEIGHT=300
+WEIGHT=400
 GRAD="0"  # "N25", "0", "200"
 SIZE=20 # 20, 24, 40, 48
 FILL=1  # 0, 1
