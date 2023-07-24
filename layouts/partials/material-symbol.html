@@ -1,4 +1,5 @@
 {{- $mod := "hugo-mod-material-icons" }}
+{{- $template := "material-symbol" }}
 {{- $assets := "svg/material-symbols" }}
 {{- $ctx := .ctx }}
 {{- $version := site.Data.materialSymbols.params.version }}
@@ -21,10 +22,10 @@
         {{- with resources.Get $filename }}
             {{ $svg = .Content }}
         {{- else }}
-            {{ errorf "%s: The partial 'material-symbol.html' can’t find '%s' in assets while processing %v." $mod $id $ctx }}
+            {{ errorf "%s: The partial %q can’t find '%s' in assets while processing %v." $mod $template $id $ctx }}
         {{- end }}
     {{- end }}
 {{- else }}
-    {{ errorf "%s: The partial 'material-symbol.html' is missing the parameter 'id' while processing %v." $mod .ctx }}
+    {{ errorf "%s: The partial %q is missing the parameter 'id' while processing %v." $mod $template $ctx }}
 {{- end }}
 <span class="{{ (print site.Data.materialSymbols.params.class " " $class) | safeHTMLAttr }}">{{- $svg | safeHTML }}</span>
