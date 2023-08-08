@@ -29,10 +29,6 @@ The shortcode expects the icon filename without the suffix as the first paramete
 
 Examples of the partial are included after the title. The following examples are generated with the shortcode.
 
-### Big icons
-
-{{< material-symbol preview big >}} {{< material-symbol engineering big >}} {{< material-symbol volcano big >}} {{< material-symbol wall_art big >}} {{< material-symbol wallpaper_slideshow big >}} 
-
 ### Normal icons
 
 {{< material-symbol preview >}} {{< material-symbol engineering >}} {{< material-symbol volcano >}} {{< material-symbol wall_art >}} {{< material-symbol wallpaper_slideshow >}}
@@ -43,9 +39,15 @@ Examples of the partial are included after the title. The following examples are
 
 ### Tiny icons
 
-These icons are rendered much smaller than the recommended size of 24px. Use with care.
-
 {{< material-symbol preview tiny >}} {{< material-symbol engineering tiny >}} {{< material-symbol volcano tiny >}} {{< material-symbol empty tiny >}} {{< material-symbol wall_art tiny >}} {{< material-symbol wallpaper_slideshow tiny >}}
+
+### Big icons
+
+{{< material-symbol preview big >}} {{< material-symbol engineering big >}} {{< material-symbol volcano big >}} {{< material-symbol wall_art big >}} {{< material-symbol wallpaper_slideshow big >}}
+
+### Extra large icons
+
+{{< material-symbol preview xl >}} {{< material-symbol engineering xl >}} {{< material-symbol volcano xl >}} {{< material-symbol wall_art xl >}} {{< material-symbol wallpaper_slideshow xl >}}
 
 ## CONFIGURATION
 

@@ -18,6 +18,11 @@ code {
     color: #222;
 }
 
+.highlight {
+    padding: 0 0.5em;
+    box-shadow: 0 0 0 1px #3338;
+}
+
 .icon {
     display: inline-block;
     color: #555;
@@ -42,6 +47,11 @@ code {
 }
 
 .icon--big {
+    width: 40px;
+    height: 40px;
+}
+
+.icon--xl {
     width: 48px;
     height: 48px;
 }
