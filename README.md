@@ -1,5 +1,5 @@
 # hugo-mod-material-symbols
-This module provides selected SVGs from Google’s material symbols and templates to include them into a Hugo project.
+This module provides selected SVGs from Google’s material symbols and templates to include them in a Hugo project.
 
 This is **not a general-purpose Hugo module** and there won’t be any releases.
 
