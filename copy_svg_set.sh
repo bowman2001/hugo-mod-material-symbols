@@ -1,10 +1,10 @@
 #!/usr/bin/env bash
 SVGDIR="/home/georg/www/material-design-icons/symbols/web"
 VERSION="sharp"
-WEIGHT=300 # 100 - 700
+WEIGHT=500 # 100 - 700
 GRAD="0"  # "N25", "0", "200"
-SIZE=48 # 20, 24, 40, 48
-FILL=0  # 0, 1
+SIZE=20 # 20, 24, 40, 48
+FILL=1  # 0, 1
 
 TARGET="/home/georg/www/hugo-mod-material-symbols/assets/svg/material-symbols/${VERSION}/wght${WEIGHT}grad${GRAD}fill${FILL}opsz${SIZE}"
 
